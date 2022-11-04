@@ -1,11 +1,11 @@
 import dataclasses
 from datetime import datetime
-
+from dataclasses import dataclass
 from sdv.domaine.documents.actor_document import ActorDocument
 from sdv.domaine.entities.abstract_actor_entity import AbstractActorEntity
 
 
-@dataclasses
+@dataclass
 class Actor(AbstractActorEntity):
     id: int
     first_name: str
