@@ -1,6 +1,7 @@
 from typing import List, Optional
 
 from sdv.domain.documents.actor_document import ActorDocument
+from sdv.domain.documents.actor_es_document import ActorEsDocument
 from sdv.domain.documents.document_type import DocumentType
 from sdv.domain.ports.resources_repository import ResourcesRepository
 
@@ -12,7 +13,7 @@ class ExtractResources:
 
     def execute(
             self, document_type: Optional[DocumentType] = None, ids: Optional[List[int]] = None
-    ) -> List[ActorDocument]:
+    ) -> List[ActorEsDocument]:
         entities = []
         if document_type and document_type in self._resources_repository:
             entities = (

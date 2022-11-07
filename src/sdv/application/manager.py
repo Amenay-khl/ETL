@@ -21,7 +21,8 @@ class Manager:
         # now = datetime.now()
         es_documents = []
         for resource in documents:
-            es_documents.append(resource.to_es_document(f"{document_type.label}_i", 1))
+           # es_documents.append(resource.to_es_document(f"{document_type.label}_i", 1))
+            resource.save()
         return es_documents
 
     def _build_engine(self):

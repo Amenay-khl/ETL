@@ -12,7 +12,7 @@ class ActorEsDocument(Document):
     last_update = Date()
 
     class Index:
-        name = 'actoEs'
+        name = 'actor_es'
         settings = {
             "number_of_shards": 2,
         }
