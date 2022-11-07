@@ -1,5 +1,5 @@
 from typing import List
-from sdv.domaine.entities.abstract_actor_entity import AbstractActorEntity
+from sdv.domain.entities.abstract_actor_entity import AbstractActorEntity
 from abc import ABCMeta, abstractmethod
 
 

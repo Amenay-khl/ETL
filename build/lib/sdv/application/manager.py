@@ -3,16 +3,15 @@ import sqlalchemy
 from retry import retry
 from config import Config
 from sdv.domain.documents.document_type import DocumentType
-from sdv.domain.extract_resources import ExtractResources
-from sdv.infrastructure.sql.repositories.actor_sql_repository import ActorSQLRepository
-
+from sdv.domain.extract_resources import ExtractRessoucres
 
 class Manager:
+
     def __init__(self, config: Config):
 
         self._config = config
         self._engine = self._build_engine()
-        self._extract_resources = ExtractResources(ActorSQLRepository(self._engine))
+        self._extract_resources = ExtractRessoucres(ActorSQLRepository(self._engine))
 
     @retry(tries=15, delay=5)
     def extract_resources(self, resource_type: str = "actor", ids: Optional[List[int]] = None):
@@ -34,6 +33,8 @@ class Manager:
             f"{self._config.db_name}"
         )
         return sqlalchemy.create_engine(database_url, echo=self._config.echo_sql)
+
+from sdv.infrastructure.sql.repositories.actor_sql_repository import ActorSQLRepository
 
 
 if __name__ == "__main__":

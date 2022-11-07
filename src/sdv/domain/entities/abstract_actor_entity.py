@@ -1,5 +1,5 @@
 import abc
-from sdv.domaine.documents.actor_document import ActorDocument
+from sdv.domain.documents.actor_document import ActorDocument
 
 
 class AbstractActorEntity(metaclass=abc.ABCMeta):
